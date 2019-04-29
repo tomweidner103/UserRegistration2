@@ -29,6 +29,7 @@ namespace userReg.Controllers
 
         public async Task<Object> PostApplicationUser(ApplicationUserModel model)
         {
+            Console.WriteLine(model);
             var applicationUser = new ApplicationUser() 
             {
                 UserName = model.UserName,
