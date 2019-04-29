@@ -11,3 +11,5 @@ dotnet ef database update
 
 Port 5000 is for postman stuff
 Port 5001 is for localhost browser stuff
+
+dotnet add package Microsoft.AspNetCore.Cors ( cross platforma reference )
