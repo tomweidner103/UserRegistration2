@@ -8,11 +8,13 @@ import { UserService } from '../shared/user.service';
   styles: []
 })
 export class HomeComponent implements OnInit {
+  // initialize userDetails
   userDetails;
 
   constructor(private router: Router, private service: UserService) { }
 
   ngOnInit() {
+    // lifecycle hook, do this first
     this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res;
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   onLogout() {
+    // just using localStorage to logout
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
 

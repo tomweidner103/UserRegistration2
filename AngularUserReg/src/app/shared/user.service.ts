@@ -10,6 +10,7 @@ export class UserService {
   constructor(private fb: FormBuilder, private http: HttpClient) { }
   readonly BaseURL = 'https://localhost:5001/api';
 
+  // this is a form we built, it has the fields we need to send, with validators
   formModel = this.fb.group({
     UserName: ['', Validators.required],
     Email: ['', Validators.email],
@@ -20,6 +21,7 @@ export class UserService {
     }, {validator: this.comparePasswords})
   });
 
+  // We made this method to compare passwords. We set errors if they dont match
   comparePasswords(fb: FormGroup) {
     const confirmPswrdCtrl = fb.get('ConfirmPassword');
     // passwordMismatch
@@ -33,6 +35,8 @@ export class UserService {
       }
     }
   }
+
+  // sign up method
   register() {
     let body = {
       UserName: this.formModel.value.UserName,
@@ -40,8 +44,7 @@ export class UserService {
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
-    this.http.post(this.BaseURL + '/ApplicationUser/Register', body)
-    return this.getUserProfile();
+    return this.http.post(this.BaseURL + '/ApplicationUser/Register', body);
   }
 
   login(formData) {
