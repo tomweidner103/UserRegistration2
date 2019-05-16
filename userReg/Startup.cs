@@ -18,6 +18,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Design;
 using Microsoft.EntityFrameworkCore;
 
 namespace userReg
@@ -41,10 +43,11 @@ namespace userReg
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<AuthenticationContext>(options => 
-            options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            options.UseNpgsql(Configuration.GetConnectionString("IdentityConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>()
-            .AddEntityFrameworkStores<AuthenticationContext>();
+            .AddEntityFrameworkStores<AuthenticationContext>()
+            .AddDefaultTokenProviders();
             
             services.Configure<IdentityOptions>(options =>
             {
