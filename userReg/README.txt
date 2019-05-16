@@ -3,8 +3,12 @@ dotnet new webapi
 Models
 |__AuthenticationContext.cs
 
+Data Source=192.168.1.133, 1401\\Database=userDB;user=SA;password=SNOOPDOGG1@; for msssql
+
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design
 
 dotnet ef migrations add <name>
 dotnet ef database update

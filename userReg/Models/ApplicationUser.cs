@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Identity;
 namespace userReg.Models{
     public class ApplicationUser : IdentityUser
     {
-        [Column(TypeName ="nvarchar(150)")]
         public string FullName { get; set; }
         public string Address { get; set; }
         public string EmergencyName { get; set; }
