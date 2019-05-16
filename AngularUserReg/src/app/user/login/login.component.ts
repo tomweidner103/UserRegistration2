@@ -11,7 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
   formModel = {
-    UserName: '',
+    // Username: '',
+    Email: '',
     Password: ''
   };
   constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }

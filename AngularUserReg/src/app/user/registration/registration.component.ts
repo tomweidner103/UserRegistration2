@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(form) {
     const user = {
-      UserName: form.value.UserName,
+      Email: form.value.Email,
       Password: form.value.Passwords.Password
     };
     this.service.register().subscribe(
@@ -56,7 +56,7 @@ export class RegistrationComponent implements OnInit {
         },
         err => {
           if (err.status === 400) {
-            this.toastr.error('Incorrect username or password', 'Authentication failed');
+            this.toastr.error('Incorrect email or password', 'Authentication failed');
           } else {
             console.log(err);
           }
