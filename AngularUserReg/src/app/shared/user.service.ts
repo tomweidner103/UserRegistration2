@@ -15,6 +15,11 @@ export class UserService {
     UserName: ['', Validators.required],
     Email: ['', Validators.email],
     FullName: [''],
+    Address: ['', Validators.required],
+    PhoneNumber: ['', Validators.required],
+    EmergencyNumber: ['', Validators.required],
+    EmergencyName: ['', Validators.required],
+    EventCode: ['', Validators.required],
     Passwords : this.fb.group({
       Password: ['', [Validators.required, Validators.minLength(4)]],
       ConfirmPassword: ['', Validators.required]
@@ -42,7 +47,12 @@ export class UserService {
       UserName: this.formModel.value.UserName,
       Email: this.formModel.value.Email,
       FullName: this.formModel.value.FullName,
-      Password: this.formModel.value.Passwords.Password
+      Password: this.formModel.value.Passwords.Password,
+      Address: this.formModel.value.Address,
+      PhoneNumber: this.formModel.value.PhoneNumber,
+      EmergencyName: this.formModel.value.EmergencyName,
+      EmergencyNumber: this.formModel.value.EmergencyNumber,
+      EventCode: this.formModel.value.EventCode
     };
     return this.http.post(this.BaseURL + '/ApplicationUser/Register', body);
   }

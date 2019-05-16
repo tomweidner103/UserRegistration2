@@ -10,5 +10,9 @@ namespace userReg.Models{
     {
         [Column(TypeName ="nvarchar(150)")]
         public string FullName { get; set; }
+        public string Address { get; set; }
+        public string EmergencyName { get; set; }
+        public string EmergencyNumber { get; set; }
+        public string EventCode { get; set; }
     }
 }

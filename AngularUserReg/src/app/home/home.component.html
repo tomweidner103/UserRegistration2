@@ -1,16 +1,31 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a href="" class="navbar-brand text-white">JWT Auth System</a>
+    <a href="" class="navbar-brand text-white">User Details</a>
     <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
   </nav>
 
 
-  <div class="card m-5" style="width: 18rem" *ngIf="userDetails">
+  <div class="card m-5" style="width: 30rem" *ngIf="userDetails">
     <ul class="list-group">
       <li class="list-group-item">
         <strong>Username : </strong>{{userDetails.userName}}
       </li>
       <li class="list-group-item">
         <strong>Fullname : </strong>{{userDetails.fullName}}
+      </li>
+      <li class="list-group-item">
+        <strong>Address : </strong>{{userDetails.address}}
+      </li>
+      <li class="list-group-item">
+        <strong>PhoneNumber : </strong>{{userDetails.phoneNumber}}
+      </li>
+      <li class="list-group-item">
+        <strong>EmergencyName : </strong>{{userDetails.emergencyName}}
+      </li>
+      <li class="list-group-item">
+        <strong>EmergencyNumber : </strong>{{userDetails.emergencyNumber}}
+      </li>
+      <li class="list-group-item">
+        <strong>EventCode : </strong>{{userDetails.eventCode}}
       </li>
       <li class="list-group-item">
         <strong>Email : </strong>{{userDetails.email}}

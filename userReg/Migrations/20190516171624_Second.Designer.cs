@@ -10,8 +10,8 @@ using userReg.Models;
 namespace userReg.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20190427003247_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190516171624_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -194,6 +194,14 @@ namespace userReg.Migrations
             modelBuilder.Entity("userReg.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("EmergencyName");
+
+                    b.Property<string>("EmergencyNumber");
+
+                    b.Property<string>("EventCode");
 
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(150)");

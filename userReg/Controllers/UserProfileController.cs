@@ -31,7 +31,12 @@ namespace userReg.Controllers
             {
                 user.FullName,
                 user.Email,
-                user.UserName
+                user.UserName,
+                user.PhoneNumber,
+                user.Address,
+                user.EmergencyName,
+                user.EmergencyNumber,
+                user.EventCode
             };
         }
     }

@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using System.Diagnostics;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,12 @@ namespace userReg.Controllers
             {
                 UserName = model.UserName,
                 Email = model.Email,
-                FullName = model.FullName
+                FullName = model.FullName,
+                Address = model.Address,
+                PhoneNumber = model.PhoneNumber,
+                EmergencyName = model.EmergencyName,
+                EmergencyNumber = model.EmergencyNumber,
+                EventCode = model.EventCode
             };
 
             try
