@@ -193,6 +193,14 @@ namespace userReg.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<string>("Address");
+
+                    b.Property<string>("EmergencyName");
+
+                    b.Property<string>("EmergencyNumber");
+
+                    b.Property<string>("EventCode");
+
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(150)");
 

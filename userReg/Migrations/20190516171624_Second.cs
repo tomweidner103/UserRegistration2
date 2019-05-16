@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace userReg.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Second : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,7 +42,11 @@ namespace userReg.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(150)", nullable: true)
+                    FullName = table.Column<string>(type: "nvarchar(150)", nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    EmergencyName = table.Column<string>(nullable: true),
+                    EmergencyNumber = table.Column<string>(nullable: true),
+                    EventCode = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
