@@ -3,7 +3,7 @@ dotnet new webapi
 Models
 |__AuthenticationContext.cs
 
-Data Source=192.168.1.133, 1401\\Database=userDB;user=SA;password=SNOOPDOGG1@; for msssql
+Data Source=192.168.1.133, 1401\\Database=userDB;user=SA;password=<myPassword>; for msssql
 
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
